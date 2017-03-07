@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jquery</title>
+    <style media="screen">
+      .box, .box2{
+        width: 250px;
+        height: 250px;
+        float: left;
+        background-color: violet;
+        margin: 10px;
+      }
+      .list, .words{
+        float: left;
+      }
+      li{
+        display: inline;
+        margin: 5px;
+      }
+      button{
+        padding: 10px;
+        border-radius: 0;
+        border: 2px solid #000;
+        cursor: pointer;
+      }
+      aside{
+        float: left;
+      }
+      .panel{
+        width: 250px;
+        height: 500px;
+        float: left;
+        background-color: lightblue;
+        margin: 10px;
+        position: relative;
+      }
+      #flip, #expose{
+        text-align: center;
+        padding: 5px;
+        background-color: #000;
+        color: #fff;
+        border: 1px solid red;
+        //float: left;
+      }
+      #expose{
+        padding: 50px;
+        display: none;
+      }
+      #story{
+        width: 100%;
+      }
+      #sideBar{
+        height: 500px;
+        width: 250px;
+        float: left;
+        background-color: lightgreen;
+        color: darkgray;
+      }
+      #menu ul li{
+        display: block;
+        margin-top: 20px;
+        cursor: pointer;
+        border: 2px solid #000;
+        padding: 10px;
+      }
+      #menu ul li p{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <div class="list">
+      <ul>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+
+        <li class="parent"> list item
+          <ul class="nested">
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+          </ul>
+        </li>
+
+        <li class="parent"> list item
+          <ul class="nested">
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+          </ul>
+        </li>
+
+        <li class="parent"> list item
+          <ul class="nested">
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <article class="words">
+      <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby.</p>
+      <p class="second">Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby.</p>
+      <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby.</p>
+      <button type="button" name="button">paragraph stuff</button>
+    </article>
+
+    <aside>
+      <div class="box2"></div>
+      <div class="box2"></div>
+      <div class="box2" id="slight"></div>
+      <div class="box2"></div>
+      <div class="box2"></div>
+      <button type="button" name="button" class="faded">get faded</button>
+      <button type="button" name="button" class="slightlyFaded">get slightly faded</button>
+    </aside>
+
+
+    <aside id="story">
+      <div id="flip">click to reveal panel</div>
+      <div id="expose">
+        <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby.</p>
+        <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby.</p>
+        <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby.</p>
+      </div>
+    </aside>
+
+    <aside id="sideBar">
+      <div id="menu">
+        <ul>
+          <li> Story
+            <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby.</p>
+          </li>
+          <li> Story
+            <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby.</p>
+          </li>
+          <li> Story
+            <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby.</p>
+          </li>
+          <li> Story
+            <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby.</p>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+
+    <aside>
+      <div class="panel"></div>
+      <div class="panel"></div>
+      <div class="panel"></div>
+      <div class="panel"></div>
+      <div class="panel"></div>
+    </aside>
+
+
+    <!-- jQuery CDN Call -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+    <script>
+    /*
+      NOTES:
+        -Basic syntax: $(selector).action()
+          * A $ sign to define/access jQuery
+          * A (selector) to "query (or find)" HTML elements
+          * A jQuery action() to be performed on the element(s)
+        -With jQuery you select (query) HTML elements and perform "actions" on them.
+        -The purpose of jQuery is to make it much easier to use JavaScript on your website.
+        -jQuery is a lightweight, "write less, do more", JavaScript library.
+        -jQuery takes a lot of common tasks that require many lines of JavaScript code to          accomplish, and wraps them into methods that you can call with a single line of code.
+        -jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.
+        -The jQuery library contains the following features:
+          * HTML/DOM manipulation
+          * CSS manipulation
+          * HTML event methods
+          * Effects and animations
+          * AJAX
+          * Utilities
+        -If your website contains a lot of pages, and you want your jQuery functions to be easy to maintain, you can put your jQuery functions in a separate .js file.
+
+
+
+      EVENTS / METHODS:
+      -All the different visitor's actions that a web page can respond to are called events.
+      -An event represents the precise moment when something happens.
+
+        .hover(): The hover() method specifies two functions to run when the mouse pointer hovers over the selected elements. This method triggers both the mouseenter and mouseleave events.
+        Note: If only one function is specified, it will be run for both the mouseenter and mouseleave events. SYNTAX: $(selector).hover(inFunction,outFunction).
+
+        .click(): The click() method attaches an event handler function to an HTML element. The function is executed when the user clicks on the HTML element.
+
+        .dbclick(): The dblclick() method attaches an event handler function to an HTML element. The function is executed when the user double-clicks on the HTML element.
+
+        .hide(): syntax: $(selector).hide(speed,callback); hides a selected element
+        .show(): syntax: $(selector).show(speed,callback); shows a selected element
+          * The optional speed parameter specifies the speed of the hiding/showing, and can take the following values: "slow", "fast", or milliseconds.
+
+        .toggle(): toggle between the hide() and show() methods. The optional speed parameter can take the following values: "slow", "fast", or milliseconds. The optional callback parameter is a function to be executed after toggle() completes.
+          * Syntax: $(selector).toggle(speed,callback);
+
+        .ready(): document.ready() - This is used to prevent any jQuery code from running before the document is finished loading (is ready). It is good practice to wait for the document to be fully loaded and ready before working with it. This also allows you to have your JavaScript code before the body of your document, in the head section. Here are some examples of actions that can fail if methods are run before the document is fully loaded:
+          * Trying to hide an element that is not created yet
+          * Trying to get the size of an image that is not loaded yet
+        Syntax:
+          * $(document).ready(function(){});
+          * short version: $(function(){})
+
+        .mouseenter(): The mouseenter() method attaches an event handler function to an HTML element. The function is executed when the mouse pointer enters the HTML element.
+
+        .mouseleave(): The mouseleave() method attaches an event handler function to an HTML element. The function is executed when the mouse pointer leaves the HTML element.
+
+        .mousedown(): The mousedown() method attaches an event handler function to an HTML element. The function is executed, when the left, middle or right mouse button is pressed down, while the mouse is over the HTML element.
+
+        .mouseup(): The mouseup() method attaches an event handler function to an HTML element. The function is executed, when the left, middle or right mouse button is released, while the mouse is over the HTML element.
+
+        .focus(): The focus() method attaches an event handler function to an HTML form field. The function is executed when the form field gets focus.
+
+        .blur(): The blur() method attaches an event handler function to an HTML form field. The function is executed when the form field loses focus.
+
+        .on(): The on() method attaches one or more event handlers for the selected elements.
+
+        .find(): Returns descendant elements of the selected element
+
+        .animate():	Runs a custom animation on the selected elements. The jQuery animate() method is used to create custom animations. The required params parameter defines the CSS properties to be animated. The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds. The optional callback parameter is a function to be executed after the animation completes. Multiple properties can be animated at the same time.
+          * Syntax: $(selector).animate({params},speed,callback);
+          * Note: By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!
+
+        .clearQueue()	Removes all remaining queued functions from the selected elements
+
+        .delay()	Sets a delay for all queued functions on the selected elements
+
+        .dequeue()	Removes the next function from the queue, and then executes the function
+
+        .fade methods: fade an element in and out of visibility
+          * .fadeIn()	Fades in the selected elements - $(selector).fadeIn(speed,callback);
+          * .fadeOut()	Fades out the selected elements - $(selector).fadeOut(speed,callback);
+          * .fadeTo()	Fades in/out the selected elements to a given opacity - $(selector).fadeTo(speed,opacity,callback);
+            * The required opacity parameter in the fadeTo() method specifies fading to a given opacity (value between 0 and 1). The optional callback parameter is a function to be executed after the function completes.
+          * .fadeToggle()	Toggles between the fadeIn() and fadeOut() methods - $(selector).fadeToggle(speed,callback);
+            * If the elements are faded out, fadeToggle() will fade them in. If the elements are faded in, fadeToggle() will fade them out.
+
+        .finish()	Stops, removes and completes all queued animations for the selected elements
+
+        .queue()	Shows the queued functions on the selected elements
+
+        .slide methods: create a sliding effect on elements
+          * .slideDown()	Slides-down (shows) the selected elements - $(selector).slideDown(speed,callback);
+          * .slideToggle()	Toggles between the slideUp() and slideDown() methods
+          * .slideUp()	Slides-up (hides) the selected elements
+
+        .stop()	Stops the currently running animation for the selected elements
+
+
+      SELECTORS:
+        $(".class") Selects all elements with the same class
+        $("#id") Selects all elements with the same id
+        $("*")	Selects all elements
+        $(this)	Selects the current HTML element
+        $("p.intro")	Selects all <p> elements with class="intro"
+        $("p:first")	Selects the first <p> element
+        $("ul li:first")	Selects the first <li> element of the first <ul>
+        $("ul li:first-child")	Selects the first <li> element of every <ul>
+        $("[href]")	Selects all elements with an href attribute
+        $("a[target='_blank']")	Selects all <a> elements with a target attribute value equal to "_blank"
+        $("a[target!='_blank']")	Selects all <a> elements with a target attribute value NOT equal to "_blank"
+        $(":button")	Selects all <button> elements and <input> elements of type="button"
+        $("tr:even")	Selects all even <tr> elements
+        $("tr:odd")	Selects all odd <tr> elements
+    */
+
+    $(document).ready(function(){
+
+
+      // hide the nested list items
+      $(".nested").hide();
+
+      // show the nested list items on hover
+      $(".parent").hover(
+        function(){
+          $(".nested").show();
+        },
+        function(){
+          $(".nested").hide(1000);
+        });
+
+
+      // hover method, using two action functions
+      $(".box").hover(
+        function(){
+          $(this).css("background-color", "blue")
+        },
+        function(){
+          $(this).css("background-color", "tomato")
+        });
+
+
+      // attach multiple event handlers to a p element using the .on() method
+      // to use multiple handlers, you must use an object insode of the .on() method
+      $("article p:first").on({// the first paragraph in the article element
+        mouseenter: function(){
+          $(this).css("color", "lightgray");
+        },
+        mouseleave: function(){
+          $(this).css("color", "tomato");
+        },
+        click: function(){
+          $(this).css("color", "blue");
+        }
+      });
+
+
+      // add a series of css styles to the second p in the article on mouseenter
+      $("article").children("p.second").on("mouseenter", function(){
+        $(this).css("color", "green");
+        $(this).css("cursor", "pointer");
+        $(this).css("font-size", "1.15em");
+        console.log($("article").find("*"));
+      });
+
+
+      // toggle the visibility of all paragraphs in the article on button click
+      $("article button").click(function(){
+        $("article p").toggle(1200);
+      });
+
+
+      // toggle opacity of boxes
+      $(".faded").click(function(){
+        $(".box2").fadeToggle("slow");
+      });
+
+      // fade a box slightly on button click
+      $(".slightlyFaded").click(function(){
+        $("#slight").fadeTo("slow", 0.25);
+      });
+
+
+      // slide the article down to reveal paragraphs on click
+      $("#flip").click(function(){
+        $("#expose").slideToggle("slow");
+      });
+
+
+      // animating elements on mouse events
+      $("#menu ul li").on({
+        mouseenter: function(){
+          $("#sideBar").animate({width: "100%"}, 700);
+          $("#menu ul li p").css("display", "block");
+        },
+        mouseleave: function(){
+          $("#sideBar").animate({width: "250"}, 700);
+          $("#menu ul li p").css("display", "none");
+        }
+      });
+
+
+      // multiple properties using animation
+      $(".panel").click(function(){
+        var random = Math.max(Math.random() * 100);
+
+        $(this).animate({
+          height: "250px",
+          borderRadius: "150px",
+          top: random
+        }, "slow")
+
+      });
+
+
+
+    });// end ready function
+    </script>
+  </body>
+</html>
